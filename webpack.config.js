@@ -1,5 +1,5 @@
 const path = require('path')
-var fs = require('fs');
+//var fs = require('fs');
 
 module.exports = {
   entry: './src/app/main.js',

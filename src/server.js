@@ -10,8 +10,6 @@ const http = require('http').Server(app);
 const io = require('socket.io')(http);
 
 
-
-
 const mongoose = require('mongoose')
 mongoose.connect('mongodb://localhost/node-vue')
   .then(()=> console.log('conectado'))
@@ -25,7 +23,7 @@ app.use(cors())
 app.use(bodyParser.json())
 
 //routes
-app.use('/item', itemRoutes)
+app.use('/api', itemRoutes)
 
 
 //static files

@@ -1,6 +1,8 @@
 import DisplayItem from '../components/DisplayItem.vue'
 import CreateItem from '../components/CreateItem.vue'
 import EditItem from '../components/EditItem.vue'
+import CreateNodo from '../components/CreateNodo.vue'
+import TemaAlerta from '../components/TemaAlerta.vue'
 import Chat from '../components/Chat.vue'
 
 const routes = [
@@ -23,6 +25,16 @@ const routes = [
     name:'Chat',
     path: 'Chat',
     component: Chat
+  },
+  {
+    name: 'CreateNodo',
+    path: 'CreateNodo',
+    component: CreateNodo
+  },
+  {
+    name: 'TemaAlerta',
+    path: 'TemaAlerta',
+    component: TemaAlerta
   }
 ]
 

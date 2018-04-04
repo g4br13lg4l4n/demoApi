@@ -5,7 +5,8 @@
   "author": "",
   "main": "index.js",
   "scripts": {
-    "watch": "webpack --watch --progress",
+    "watch": "webpack --watch webpack.config.js --mode development --progress",
+    "prod": "webpack --mode production",
     "start": "node src/server.js",
     "start:dev": "webpack-dev-server",
     "build": "webpack",

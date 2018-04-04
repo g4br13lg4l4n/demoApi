@@ -9,7 +9,9 @@
           <nav class="breadcrumb" aria-label="breadcrumbs">
             <ul>
               <li><router-link class="navbar-item" :to="{name: 'DisplayItem'}"> HOME </router-link></li>
-              <li><router-link class="navbar-item" :to="{name: 'CreateItem'}"> Crear Item </router-link></li>
+              <li><router-link class="navbar-item" :to="{name: 'CreateItem'}"> Crear User </router-link></li>
+              <li><router-link class="navbar-item" :to="{name: 'CreateNodo'}"> Crear Nodo (nota) </router-link></li>
+              <li><router-link class="navbar-item" :to="{name: 'TemaAlerta'}"> Tema de alerta por usuario </router-link></li>
               <li><router-link class="navbar-item" :to="{name: 'Chat'}"> Chat </router-link></li>
             </ul>
           </nav>  

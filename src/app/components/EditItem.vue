@@ -3,13 +3,13 @@
       <div class="field">
         <label class="label">Nombre</label>
         <div class="control">
-          <input class="input" v-model="item.name" type="text" placeholder="Text input">
+          <input class="input" v-model="item.name" type="text" placeholder="Text Nombre">
         </div>
       </div>
       <div class="field">
-        <label class="label">Precio</label>
+        <label class="label">Email</label>
         <div class="control">
-          <input class="input" v-model="item.price" type="text" placeholder="Text input">
+          <input class="input" v-model="item.price" type="text" placeholder="Text Email">
         </div>
       </div>
       <div class="control">
@@ -29,13 +29,13 @@
     },
     methods: {
       getItem(){
-        this.axios.get('/item/'+this.$route.params.id+'')
+        this.axios.get('/api/'+this.$route.params.id+'')
           .then(res => {
             this.item = res.data
           })
       },
       updateItem() {
-        this.axios.put('/item/'+this.item._id+'', this.item)
+        this.axios.put('/api/'+this.item._id+'', this.item)
         .then(res => {
           this.$router.replace({name: 'DisplayItem'})
         })

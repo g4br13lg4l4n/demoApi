@@ -2,24 +2,24 @@
   <div class="card">
     <header class="card-header">
     <p class="card-header-title">
-        Agregar un item
+        Agregar un Usuario
       </p>
     </header>  
-    <form v-on:submit.prevent="addItem()">
+    <form v-on:submit.prevent="addUser()">
       <div class="field">
         <label class="label">Nombre</label>
         <div class="control">
-          <input class="input" type="text" v-model="item.name" placeholder="Nombre">
+          <input class="input" type="text" v-model="user.name" placeholder="Nombre">
         </div>
-        <p class="help">This is a help text</p>
+        <p class="help">Nombre completo</p>
       </div>
 
       <div class="field">
-        <label class="label">Precio</label>
+        <label class="label">Email</label>
         <div class="control">
-          <input class="input" type="text" v-model="item.price" placeholder="Precio">
+          <input class="input" type="text" v-model="user.email" placeholder="Email">
         </div>
-        <p class="help">This is a help text</p>
+        <p class="help">Email</p>
       </div>
       <div class="control">
         <button class="button is-primary">Guardar</button>
@@ -32,12 +32,16 @@
   export default {
     data(){
       return {
-        item: {}
+        user: {
+          uid: null
+        }
       }
     },
     methods: {
-      addItem () {
-        this.axios.post('/item', this.item)
+      addUser () {
+        const randon = Math.floor((Math.random() * 100) + 1)
+        this.user.uid = randon 
+        this.axios.post('/api/user', this.user)
           .then(res => {
             this.$router.replace({name: 'DisplayItem'})
           })
