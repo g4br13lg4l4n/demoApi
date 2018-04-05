@@ -31,7 +31,7 @@ const store = new Vuex.Store({
     counterModule
   }
 })
-Vue.use(VueSocketio, 'http://localhost:3000', store)
+Vue.use(VueSocketio, 'http://localhost:3101', store)
 
 
 const router = new VueRouter({

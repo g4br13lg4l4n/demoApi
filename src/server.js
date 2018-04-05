@@ -16,7 +16,7 @@ mongoose.connect('mongodb://localhost/node-vue')
   .catch( err => console.log(err))
 
 //settings
-app.set('port', process.env.PORT || 3000)
+app.set('port', process.env.PORT || 3101)
 
 //middleware 
 app.use(cors())

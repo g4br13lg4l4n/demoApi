@@ -6,7 +6,7 @@ const Schema = mongoose.Schema
 
 const Theme = new Schema({
   aid: String,
-  name_site: String,
+  name_alert: String,
   url: String,
   nodo: {type: Schema.Types.ObjectId, ref: 'nodo'},
   user: {type: Schema.Types.ObjectId, ref: 'userAlert'},

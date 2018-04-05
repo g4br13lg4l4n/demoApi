@@ -71,7 +71,7 @@
             <th>aid:</th>
             <th>uid:</th>
             <th>nid:</th>
-            <th>name_site:</th>
+            <th>name_alert:</th>
             <th>url:</th>
             <th>Opciones</th>
           </tr>  
@@ -82,7 +82,7 @@
             <td>{{ theme.aid}}</td>
             <td>{{ theme.user}}</td>
             <td>{{ theme.nodo}}</td>
-            <td>{{ theme.name_site}}</td>
+            <td>{{ theme.name_alert}}</td>
             <td>{{theme.url}}</td>
             <td>
               <router-link  class="button is-info" :to="{name: 'EditItem', params: {id: theme._id}}"> Actualizar </router-link>

@@ -30,7 +30,7 @@
       <div class="field">
         <label class="label">Nombre del tema</label>
         <div class="control">
-          <input class="input" type="text" v-model="temaAlerta.name_site" placeholder="Nombre del tema">
+          <input class="input" type="text" v-model="temaAlerta.name_alert" placeholder="Nombre del tema">
         </div>
         <p class="help">Nombre completo</p>
       </div>

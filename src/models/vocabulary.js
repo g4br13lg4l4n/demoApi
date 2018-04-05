@@ -4,8 +4,8 @@ const Schema = mongoose.Schema
 const Vocabulary = new Schema({
   vid: Number,
   name: String,
-  date_create:  Date,
-  date_update: Date
+  create:  Date,
+  update: Date
 })
 
 module.exports = mongoose.model('vocabulary', Vocabulary)
