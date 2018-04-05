@@ -5,7 +5,8 @@ const Vocabulary = new Schema({
   vid: Number,
   name: String,
   create:  Date,
+  sitename: String,
   update: Date
 })
 
-module.exports = mongoose.model('vocabulary', Vocabulary)
+module.exports = mongoose.model('Vocabulary', Vocabulary)
