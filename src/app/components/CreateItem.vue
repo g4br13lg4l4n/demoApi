@@ -7,20 +7,33 @@
     </header>  
     <form v-on:submit.prevent="addUser()">
       <div class="field">
-        <label class="label">Nombre</label>
+        <label class="label">url</label>
         <div class="control">
-          <input class="input" type="text" v-model="user.name" placeholder="Nombre">
+          <input class="input" type="text" v-model="user.url" placeholder="url">
         </div>
-        <p class="help">Nombre completo</p>
       </div>
 
       <div class="field">
-        <label class="label">Email</label>
+        <label class="label">title</label>
         <div class="control">
-          <input class="input" type="text" v-model="user.email" placeholder="Email">
+          <input class="input" type="text" v-model="user.title" placeholder="title">
         </div>
-        <p class="help">Email</p>
       </div>
+
+      <div class="field">
+        <label class="label">images</label>
+        <div class="control">
+          <input class="input" type="text" v-model="user.images" placeholder="images">
+        </div>
+      </div>
+
+      <div class="field">
+        <label class="label">summary</label>
+        <div class="control">
+          <input class="input" type="text" v-model="user.summary" placeholder="summary">
+        </div>
+      </div>
+
       <div class="control">
         <button class="button is-primary">Guardar</button>
       </div>
@@ -33,15 +46,18 @@
     data(){
       return {
         user: {
-          uid: null
+          nid: null,
+          tid: null
         }
       }
     },
     methods: {
       addUser () {
         const randon = Math.floor((Math.random() * 100) + 1)
-        this.user.uid = randon 
-        this.axios.post('/api/user', this.user)
+        this.user.nid = randon 
+        this.user.tid = randon
+
+        this.axios.post('/api/nodos', this.user)
           .then(res => {
             this.$router.replace({name: 'DisplayItem'})
           })

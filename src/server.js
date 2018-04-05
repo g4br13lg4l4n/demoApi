@@ -3,15 +3,14 @@ const bodyParser = require('body-parser')
 const express = require('express')
 const cors = require('cors')
 const app = express()
-const itemRoutes = require('./routes/item')
+const itemRoutes = require('./routes/api')
 
 // config io
-const http = require('http').Server(app);
-const io = require('socket.io')(http);
-
+const http = require('http').Server(app)
+const io = require('socket.io')(http)
 
 const mongoose = require('mongoose')
-mongoose.connect('mongodb://localhost/node-vue')
+mongoose.connect('mongodb://localhost/alerts')
   .then(()=> console.log('conectado'))
   .catch( err => console.log(err))
 
@@ -34,19 +33,16 @@ app.listen(app.get('port'), () => {
 })
 */
 io.on('connection', function(socket){
-  console.log('Usuario conectado');
+  console.log('Usuario conectado')
   socket.on('disconnect', function(){
-    console.log('Usuario desconectado :(');
-  });
+    console.log('Usuario desconectado :(')
+  })
   socket.on('chat message', function(msg){
-    console.log('message: ' + msg);
-    io.emit('RESPONSER', msg);
-  });
-
-});
-
-
+    console.log('message: ' + msg)
+    io.emit('RESPONSER', msg)
+  })
+})
    
 http.listen(app.get('port'), function(){
-  console.log('listening on ', app.get('port'));
+  console.log('listening on ', app.get('port'))
 });

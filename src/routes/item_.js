@@ -85,15 +85,13 @@ router.get("/themesNodo", (req, res) => {
 */
 
 router.get("/themesNodo", (req, res) => {
-
 	Theme.find({})
-      .populate('nodo')
-      .populate('user')
-      .exec((err, themes) =>{
-        if (err) return handleError(err)
-        res.status(200).send(themes)
-      })
-    
+    .populate('nodo')
+    .populate('user')
+    .exec((err, themes) =>{
+      if (err) return handleError(err)
+      res.status(200).send(themes)
+    })
 })
 
 router.get('/', (req, res) => {
